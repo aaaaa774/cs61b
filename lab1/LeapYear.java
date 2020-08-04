@@ -1,7 +1,23 @@
 /** Class that determines whether or not a year is a leap year.
  *  @author YOUR NAME HERE
  */
+ 
+ import java.util.Scanner;
+ 
 public class LeapYear {
+	
+	/**
+	 * is leap year
+	
+	*/
+	public static boolean isLeapYear(int year){
+		if (year % 100 ==0){
+			if (year % 400 ==0) return true;
+			else return false;
+		}else if(year % 4 ==0) return true;
+		else return false;
+	}
+	
 
     /** Calls isLeapYear to print correct statement.
      *  @param  year to be analyzed
@@ -16,6 +32,11 @@ public class LeapYear {
 
     /** Must be provided an integer as a command line argument ARGS. */
     public static void main(String[] args) {
+		//Scanner scan = new Scanner(System.in);
+		//int year = scan.nextInt();
+		//String[] args = 
+		args = new String[]{"java year 2020","1999","1700","1600"};
+		
         if (args.length < 1) {
             System.out.println("Please enter command line arguments.");
             System.out.println("e.g. java Year 2000");
@@ -28,6 +49,10 @@ public class LeapYear {
                 System.out.printf("%s is not a valid number.\n", args[i]);
             }
         }
+		
+		
+		
+		
     }
 }
 
