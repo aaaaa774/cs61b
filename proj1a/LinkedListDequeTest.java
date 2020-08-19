@@ -1,3 +1,5 @@
+import javax.sound.midi.Soundbank;
+
 /** Performs some basic linked list tests. */
 public class LinkedListDequeTest {
 	
@@ -58,7 +60,8 @@ public class LinkedListDequeTest {
 		lld1.printDeque();
 
 		printTestStatus(passed);
-		*/
+		 */
+
 	}
 
 	/** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
@@ -88,5 +91,34 @@ public class LinkedListDequeTest {
 		System.out.println("Running tests.\n");
 		addIsEmptySizeTest();
 		addRemoveTest();
+		/*写着玩*/
+		LinkedListDeque<String> lld1 = new LinkedListDeque<>();
+		lld1.addFirst("front");
+		lld1.addFirst("middle");
+		lld1.addFirst("back");
+		lld1.addLast("front");
+		lld1.addLast("middle");
+		lld1.addLast("back");
+		LinkedListDeque<String> lld2 = new LinkedListDeque<>(lld1);
+
+		lld1.removeFirst();
+		lld1.removeLast();
+		lld1.removeLast();
+		lld1.removeLast();
+		lld1.removeLast();
+		lld1.removeLast();
+		lld1.addFirst("fun");
+		lld1.addFirst("a");
+		lld1.addFirst("have");
+		lld1.addLast("haha");
+		lld1.printDeque();
+		System.out.println(lld1.get(3));
+		System.out.println(lld1.size());
+
+		lld2.printDeque();
+		System.out.println(lld2.get(3));
+		System.out.println(lld2.size());
+
+
 	}
 } 
