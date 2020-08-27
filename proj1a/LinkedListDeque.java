@@ -1,8 +1,10 @@
+import java.util.Deque;
+
 /**
  * @author q
  * @create 2020-08-16 16:01
  */
-public class LinkedListDeque<T> {
+public class LinkedListDeque<T>  {
     //define the node
     public class IntNode{
         public IntNode prev;
