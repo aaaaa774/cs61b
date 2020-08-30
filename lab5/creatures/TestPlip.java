@@ -1,19 +1,19 @@
 package creatures;
+import huglife.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
 import java.awt.Color;
-import huglife.Direction;
-import huglife.Action;
-import huglife.Occupant;
-import huglife.Impassible;
-import huglife.Empty;
 
 /** Tests the plip class
  *  @authr FIXME
  */
 
 public class TestPlip {
+
 
     @Test
     public void testBasics() {
@@ -32,10 +32,16 @@ public class TestPlip {
 
     @Test
     public void testReplicate() {
-        // TODO
+        Plip p0 = new Plip(2);
+        Creature p1 = p0.replicate();
+        assertEquals(1, p0.energy(),0.01);
+        assertEquals(1, p1.energy(),0.01);
+        p0.move();
+        assertEquals(1, p1.energy(),0.01);
+        assertEquals(0.85, p0.energy(),0.01);
     }
 
-    //@Test
+    @Test
     public void testChoose() {
 
         // No empty adjacent spaces; stay.
