@@ -83,7 +83,7 @@ public class TestBSTMapExtra {
     *  when the node has only 1 or 0 children on either side. */
     @Test
     public void testRemoveRootEdge() {
-        BSTMap rightChild = new BSTMap();
+        BSTMap<Character,Integer> rightChild = new BSTMap();
         rightChild.put('A', 1);
         rightChild.put('B', 2);
         Integer result = (Integer) rightChild.remove('A');

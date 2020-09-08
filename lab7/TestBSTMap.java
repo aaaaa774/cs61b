@@ -34,6 +34,20 @@ public class TestBSTMap {
         }
     }
 
+    @Test
+    public void testIt() {
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+        for (int i = 0; i < 1; i++) {
+            b.put("hi" + i, 1+i);
+            //make sure put is working via containsKey and get
+//            assertTrue( null != b.get("hi" + i) && (b.get("hi"+i).equals(1+i))
+//                    && b.containsKey("hi" + i));
+        }
+        System.out.println(b.get("hi" + 0));
+        System.out.println((b.get("hi" + 0).equals(1)));
+        System.out.println(b.containsKey("hi" + 0));
+    }
+
     // assumes put works
     @Test
     public void sanityContainsKeyTest() {
@@ -75,6 +89,46 @@ public class TestBSTMap {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         b.put("hi", 1);
         assertTrue(b.containsKey("hi") && b.get("hi") != null);
+    }
+
+    @Test
+    public void testTree(){
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+//        for (int i = 200; i < 455; i++) {
+//            b.put("hi" + i, 1+i);
+//        }
+        b.put("hi" + 5, 1+1);
+        b.put("hi" + 3, 1+1);
+        b.put("hi" + 7, 1+1);
+        b.put("hi" + 4, 1+1);
+        b.put("hi" + 6, 1+1);
+        System.out.println(b.right.left.key);
+        boolean is = b.containsKey("hi" + 6);
+        System.out.println(is);
+        System.out.println(b.right.left.key);
+        System.out.println(b.containsKey("123"));
+        System.out.println("******************");
+        b.put("hi" + 8, 8);
+        b.put("hi" + 2, 11);
+//        System.out.println(b.remove("hi" + 5));
+//        System.out.println(b.key);
+//        System.out.println(b.left.right);
+        b.put("hi" + 3.5, 35);
+        b.put("hi" + 4.5, 45);
+        b.put("hi" + 1, 10);
+        b.put("hi" + 6.5, 65);
+        System.out.println(b.remove("hi" + 1));
+        System.out.println(b.key);
+        System.out.println(b.left.left.left);
+//        System.out.println(b.remove("hi" + 4));
+//        System.out.println(b.left.right.right.key);
+//        System.out.println(b.remove("hi" + 3));
+//        System.out.println(b.left.right.key);
+//        System.out.println(b.remove("hi" + 4.5));
+//        System.out.println(b.left.right.right);
+        System.out.println(b.remove("hi" + 6));
+        System.out.println(b.right.left.key);
+
     }
 
     public static void main(String[] args) {

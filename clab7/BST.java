@@ -27,9 +27,10 @@ public class BST<Key extends Comparable<Key>> {
      *         {@code false} otherwise
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public boolean contains(Key key) {
+    public int contains(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to contains() is null");
-        return contains(root, key);
+        if (contains(root, key) == false) throw new IllegalArgumentException("not existed");
+        return depth(root, key);
     }
 
     /**
@@ -236,6 +237,14 @@ public class BST<Key extends Comparable<Key>> {
         if      (cmp < 0) return contains(x.left, key);
         else if (cmp > 0) return contains(x.right, key);
         else              return true;
+    }
+
+    private int depth(Node x, Key key){
+        if (x == null) return 0;
+        int cmp = key.compareTo(x.key);
+        if      (cmp < 0) return 1 + depth(x.left, key);
+        else if (cmp > 0) return 1 + depth(x.right, key);
+        else              return 1;
     }
 
 
